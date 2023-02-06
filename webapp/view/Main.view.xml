@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="searchimage.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+
+                        <FlexBox id="_IDGenFlexBox1" justifyContent="Center">
+                            <Input id="inpBusca" submit="onPressBuscar"/>
+                            <Button id="_IDGenButton1" text="Search" press="onPressBuscar" />
+                        </FlexBox>
+
+                        <List items="{ModeloImagem>/Imagens}">
+                            <CustomListItem>
+                                <HBox>
+                                    <Image src= "{ModeloImagem>thumbnail}"
+                                            width="5em"/>
+                                    <VBox>
+                                        <Link text="{ModeloImagem>title}"
+                                        href="{ModeloImagem>url}" 
+                                        target="_blank"/>
+                                        <Label text="{ModeloImagem>provider/name}"/>
+                                    </VBox>
+                                </HBox>
+                            </CustomListItem>
+                        </List>
+
+
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
